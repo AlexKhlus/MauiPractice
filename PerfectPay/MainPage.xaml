@@ -1,41 +1,143 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PerfectPay.MainPage">
-
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="PerfectPay.MainPage"
+	BackgroundColor="{StaticResource BackgroundApplicationColor}">
+	<Grid Margin="15">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="0.3*" />
+			<RowDefinition Height="0.7*" />
+		</Grid.RowDefinitions>
+		<Frame
+			Padding="10"
+			BackgroundColor="{StaticResource SectionsColor}"
+			BorderColor="Transparent">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition />
+					<ColumnDefinition Width="1" />
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.1*" />
+					<RowDefinition Height="0.9*" />
+				</Grid.RowDefinitions>
+				<Label
+					Grid.ColumnSpan="3"
+					HorizontalTextAlignment="Center"
+					Text="TOTAL P/PERSON" TextColor="{StaticResource DarkFontColor}"
+					FontAttributes="Bold" />
+				<Label
+					x:Name="TotalLabel"
+					Grid.Row="1"
+					Text="$0.00" FontSize="35" TextColor="{StaticResource LightFontColor}"
+					FontAttributes="Bold"
+					HorizontalTextAlignment="Center"
+					VerticalOptions="CenterAndExpand" />
+				<BoxView
+					Grid.Column="1" Grid.Row="1"
+					Margin="0, 10, 0, 0"
+					VerticalOptions="Center"
+					Color="{StaticResource LightPipeColor}" />
+				<StackLayout
+					Orientation="Vertical"
+					Grid.Column="2" Grid.Row="1"
+					HorizontalOptions="Center" VerticalOptions="Center">
+					<Label
+						Text="SUBTOTAL"
+						TextColor="{StaticResource LightFontColor}" />
+					<Label
+						x:Name="SubtotalLabel"
+						Text="$0.00" TextColor="{StaticResource LightFontColor}"
+						FontAttributes="Bold" />
+					<Label
+						Margin="0, 10, 0, 0"
+						Text="TIP" TextColor="{StaticResource LightFontColor}" />
+					<Label
+						x:Name="FlatTipLabel"
+						Text="$0.00" TextColor="{StaticResource LightFontColor}"
+						FontAttributes="Bold" />
+				</StackLayout>
+			</Grid>
+		</Frame>
+		<Grid
+			Grid.Row="1"
+			Margin="0, 15, 0, 0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.3*" />
+				<ColumnDefinition Width="0.7*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Label
+				Text="Enter your bill: $" TextColor="{StaticResource LightFontColor}"
+				VerticalOptions="Center" />
+			<Entry
+				x:Name="BillTextEntry"
+				Grid.Column="1"
+				BackgroundColor="{StaticResource SectionsColor}"
+				Keyboard="Numeric"
+				Text="0.0" TextColor="{StaticResource LightFontColor}"
+				VerticalOptions="Center" />
+			<Label
+				Grid.Row="1"
+				Text="Choose your tip" TextColor="{StaticResource LightFontColor}"
+				VerticalOptions="Center" />
+			<StackLayout
+				Orientation="Horizontal"
+				Grid.Column="1" Grid.Row="1"
+				HeightRequest="70"
+				HorizontalOptions="CenterAndExpand"
+				Spacing="10">
+				<Button
+					Text="10%"
+					WidthRequest="70" />
+				<Button
+					Text="15%"
+					WidthRequest="70" />
+				<Button
+					Text="20%"
+					WidthRequest="70" />
+			</StackLayout>
+			<Label
+				x:Name="PercentageTipLabel"
+				Grid.Row="2"
+				Text="Tip: 0%" TextColor="{StaticResource LightFontColor}"
+				VerticalOptions="Center" />
+			<Slider
+				x:Name="TipSlider"
+				Grid.Column="1" Grid.Row="2"
+				Minimum="0" Maximum="50" />
+			<Label
+				Grid.Row="3"
+				Text="Split the total" TextColor="{StaticResource LightFontColor}"
+				VerticalOptions="Center" />
+			<StackLayout
+				Orientation="Horizontal"
+				Grid.Column="1" Grid.Row="3"
+				HorizontalOptions="Center" VerticalOptions="Center">
+				<Button
+					x:Name="MinusButton"
+					Text="-"
+					WidthRequest="70" />
+				<Label
+					x:Name="PersonsNumberLabel"
+					Margin="-5, 0"
+					BackgroundColor="{StaticResource SectionsColor}"
+					HeightRequest="50" WidthRequest="100"
+					HorizontalOptions="Center" VerticalOptions="Center"
+					Text="1" FontSize="25" TextColor="{StaticResource LightFontColor}"
+					HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+				<Button
+					x:Name="PlusButton"
+					Text="+"
+					WidthRequest="70" />
+			</StackLayout>
+		</Grid>
+	</Grid>
 </ContentPage>
