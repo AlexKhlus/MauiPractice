@@ -84,7 +84,7 @@
 				Keyboard="Numeric"
 				Text="0.0" TextColor="{StaticResource LightFontColor}"
 				VerticalOptions="Center"
-				Completed="OnEntryInputCompleted"/>
+				Completed="OnEntryInputCompleted" />
 			<Label
 				Grid.Row="1"
 				Text="Choose your tip" TextColor="{StaticResource LightFontColor}"
@@ -117,7 +117,7 @@
 				x:Name="TipSlider"
 				Grid.Column="1" Grid.Row="2"
 				Minimum="0" Maximum="50"
-				ValueChanged="OnSliderValueChanged"/>
+				ValueChanged="OnSliderValueChanged" />
 			<Label
 				Grid.Row="3"
 				Text="Split the total between" TextColor="{StaticResource LightFontColor}"
@@ -127,10 +127,9 @@
 				Grid.Column="1" Grid.Row="3"
 				HorizontalOptions="Center" VerticalOptions="Center">
 				<Button
-					x:Name="MinusButton"
 					Text="-"
 					WidthRequest="70"
-					Clicked="OnMinusButtonClicked"/>
+					Clicked="OnMinusButtonClicked" />
 				<Label
 					x:Name="PersonsNumberLabel"
 					Margin="-5, 0"
@@ -140,10 +139,9 @@
 					Text="1" FontSize="25" TextColor="{StaticResource LightFontColor}"
 					HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
 				<Button
-					x:Name="PlusButton"
 					Text="+"
 					WidthRequest="70"
-					Clicked="OnPlusButtonClicked"/>
+					Clicked="OnPlusButtonClicked" />
 			</StackLayout>
 		</Grid>
 	</Grid>
