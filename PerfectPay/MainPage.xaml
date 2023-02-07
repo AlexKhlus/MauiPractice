@@ -83,7 +83,8 @@
 				BackgroundColor="{StaticResource SectionsColor}"
 				Keyboard="Numeric"
 				Text="0.0" TextColor="{StaticResource LightFontColor}"
-				VerticalOptions="Center" />
+				VerticalOptions="Center"
+				Completed="OnEntryInputCompleted"/>
 			<Label
 				Grid.Row="1"
 				Text="Choose your tip" TextColor="{StaticResource LightFontColor}"
@@ -96,13 +97,16 @@
 				Spacing="10">
 				<Button
 					Text="10%"
-					WidthRequest="70" />
+					WidthRequest="70"
+					Clicked="OnTipButtonClicked" />
 				<Button
 					Text="15%"
-					WidthRequest="70" />
+					WidthRequest="70"
+					Clicked="OnTipButtonClicked" />
 				<Button
 					Text="20%"
-					WidthRequest="70" />
+					WidthRequest="70"
+					Clicked="OnTipButtonClicked" />
 			</StackLayout>
 			<Label
 				x:Name="PercentageTipLabel"
@@ -112,7 +116,8 @@
 			<Slider
 				x:Name="TipSlider"
 				Grid.Column="1" Grid.Row="2"
-				Minimum="0" Maximum="50" />
+				Minimum="0" Maximum="50"
+				ValueChanged="OnSliderValueChanged"/>
 			<Label
 				Grid.Row="3"
 				Text="Split the total" TextColor="{StaticResource LightFontColor}"
@@ -124,7 +129,8 @@
 				<Button
 					x:Name="MinusButton"
 					Text="-"
-					WidthRequest="70" />
+					WidthRequest="70"
+					Clicked="OnMinusButtonClicked"/>
 				<Label
 					x:Name="PersonsNumberLabel"
 					Margin="-5, 0"
@@ -136,7 +142,8 @@
 				<Button
 					x:Name="PlusButton"
 					Text="+"
-					WidthRequest="70" />
+					WidthRequest="70"
+					Clicked="OnPlusButtonClicked"/>
 			</StackLayout>
 		</Grid>
 	</Grid>
