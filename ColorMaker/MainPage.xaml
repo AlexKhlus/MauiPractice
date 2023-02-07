@@ -1,41 +1,67 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ColorMaker.MainPage">
-
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="ColorMaker.MainPage">
+	<Grid
+		x:Name="RootContainer"
+		BackgroundColor="Black">
+		<Frame
+			Margin="10, 0"
+			VerticalOptions="Center"
+			BackgroundColor="White">
+			<StackLayout
+				Orientation="Vertical"
+				Spacing="15"
+				VerticalOptions="Center">
+				<Label
+					FontAttributes="Bold" FontSize="Large"
+					HorizontalTextAlignment="Center"
+					Text="Color Maker" TextColor="Black" />
+				<Label Text="Red Color Value:" />
+				<Slider
+					x:Name="RedColorSlider"
+					ThumbColor="{StaticResource Primary}"
+					MinimumTrackColor="{StaticResource Secondary}"
+					MaximumTrackColor="{StaticResource Tertiary}"
+					ValueChanged="OnSliderValueChanged" />
+				<Label Text="Green Color Value:" />
+				<Slider
+					x:Name="GreenColorSlider"
+					ThumbColor="{StaticResource Primary}"
+					MinimumTrackColor="{StaticResource Secondary}"
+					MaximumTrackColor="{StaticResource Tertiary}"
+					ValueChanged="OnSliderValueChanged" />
+				<Label Text="Blue Color Value:" />
+				<Slider
+					x:Name="BlueColorSlider"
+					ThumbColor="{StaticResource Primary}"
+					MinimumTrackColor="{StaticResource Secondary}"
+					MaximumTrackColor="{StaticResource Tertiary}"
+					ValueChanged="OnSliderValueChanged" />
+				<Frame
+					CornerRadius="25"
+					HorizontalOptions="Center">
+					<StackLayout Orientation="Horizontal">
+						<Label
+							x:Name="HexColorLabel"
+							VerticalOptions="Center"
+							HorizontalTextAlignment="End"
+							Text="Hex Color: #000000" />
+						<ImageButton
+							Margin="10, 0, 0, 0"
+							WidthRequest="20" HeightRequest="20"
+							VerticalOptions="Center"
+							Source="copy.svg"
+							Clicked="OnImageButtonClicked" />
+					</StackLayout>
+				</Frame>
+				<Button
+					x:Name="RandomColorButton"
+					BackgroundColor="{StaticResource Primary}"
+					Text="Generate Random Color" TextColor="White"
+					Clicked="OnButtonClicked"/>
+			</StackLayout>
+		</Frame>
+	</Grid>
 </ContentPage>
