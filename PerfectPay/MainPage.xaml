@@ -26,20 +26,8 @@
 				<Label
 					Grid.ColumnSpan="3"
 					HorizontalTextAlignment="Center"
-					Text="TOTAL P/PERSON" TextColor="{StaticResource DarkFontColor}"
+					Text="TOTAL PER PERSON" TextColor="{StaticResource DarkFontColor}"
 					FontAttributes="Bold" />
-				<Label
-					x:Name="TotalLabel"
-					Grid.Row="1"
-					Text="$0.00" FontSize="35" TextColor="{StaticResource LightFontColor}"
-					FontAttributes="Bold"
-					HorizontalTextAlignment="Center"
-					VerticalOptions="CenterAndExpand" />
-				<BoxView
-					Grid.Column="1" Grid.Row="1"
-					Margin="0, 10, 0, 0"
-					VerticalOptions="Center"
-					Color="{StaticResource LightPipeColor}" />
 				<StackLayout
 					Orientation="Vertical"
 					Grid.Column="2" Grid.Row="1"
@@ -59,6 +47,18 @@
 						Text="$0.00" TextColor="{StaticResource LightFontColor}"
 						FontAttributes="Bold" />
 				</StackLayout>
+				<BoxView
+					Grid.Column="1" Grid.Row="1"
+					Margin="0, 10, 0, 0"
+					VerticalOptions="Center"
+					Color="{StaticResource LightPipeColor}" />
+				<Label
+					x:Name="TotalLabel"
+					Grid.Row="1"
+					Text="$0.00" FontSize="35" TextColor="{StaticResource LightFontColor}"
+					FontAttributes="Bold"
+					HorizontalTextAlignment="Center"
+					VerticalOptions="CenterAndExpand" />
 			</Grid>
 		</Frame>
 		<Grid
@@ -120,7 +120,7 @@
 				ValueChanged="OnSliderValueChanged"/>
 			<Label
 				Grid.Row="3"
-				Text="Split the total" TextColor="{StaticResource LightFontColor}"
+				Text="Split the total between" TextColor="{StaticResource LightFontColor}"
 				VerticalOptions="Center" />
 			<StackLayout
 				Orientation="Horizontal"
