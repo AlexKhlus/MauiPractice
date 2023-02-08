@@ -4,25 +4,21 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	x:Class="PerfectPay.MainPage"
 	BackgroundColor="{StaticResource BackgroundApplicationColor}">
-	<Grid Margin="15">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="0.3*" />
-			<RowDefinition Height="0.7*" />
-		</Grid.RowDefinitions>
+	<Grid
+		Margin="15"
+		RowDefinitions="0.3*, 0.7*">
 		<Frame
 			Padding="10"
 			BackgroundColor="{StaticResource SectionsColor}"
 			BorderColor="Transparent">
-			<Grid>
-				<Grid.ColumnDefinitions>
+			<Grid
+				ColumnDefinitions="*, 1, *"
+				RowDefinitions="0.1*, 0.9*">
+				<!--<Grid.ColumnDefinitions>
 					<ColumnDefinition />
 					<ColumnDefinition Width="1" />
 					<ColumnDefinition />
-				</Grid.ColumnDefinitions>
-				<Grid.RowDefinitions>
-					<RowDefinition Height="0.1*" />
-					<RowDefinition Height="0.9*" />
-				</Grid.RowDefinitions>
+				</Grid.ColumnDefinitions>-->
 				<Label
 					Grid.ColumnSpan="3"
 					HorizontalTextAlignment="Center"
@@ -63,17 +59,15 @@
 		</Frame>
 		<Grid
 			Grid.Row="1"
-			Margin="0, 15, 0, 0">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="0.3*" />
-				<ColumnDefinition Width="0.7*" />
-			</Grid.ColumnDefinitions>
-			<Grid.RowDefinitions>
+			Margin="0, 15, 0, 0"
+			ColumnDefinitions="0.3*, 0.7*"
+			RowDefinitions="*,*,*,*">
+			<!--<Grid.RowDefinitions>
 				<RowDefinition />
 				<RowDefinition />
 				<RowDefinition />
 				<RowDefinition />
-			</Grid.RowDefinitions>
+			</Grid.RowDefinitions>-->
 			<Label
 				Text="Enter your bill: $" TextColor="{StaticResource LightFontColor}"
 				VerticalOptions="Center" />
