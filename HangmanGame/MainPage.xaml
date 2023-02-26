@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="HangmanGame.MainPage">
+
+	<Grid
+		RowDefinitions="0.6*, 0.4*">
+		<StackLayout Orientation="Vertical">
+			<Label
+				Text="{Binding Status}"
+				FontAttributes="Bold"
+				HorizontalOptions="Center" />
+			<Image
+				Source="{Binding CurrentImage}"
+				HeightRequest="200" />
+			<Label
+				Text="{Binding Spotlight}"
+				FontSize="40"
+				HorizontalOptions="Center" VerticalOptions="Center" />
+			<Label
+				Text="{Binding Message}"
+				FontSize="Large"
+				HorizontalTextAlignment="Center" />
+			<Button
+				Text="Reset"
+				HorizontalOptions="Center"
+				WidthRequest="100"
+				Clicked="OnResetButtonClicked" />
+		</StackLayout>
+		<FlexLayout
+			x:Name="KeyboardFlexLayout"
+			Grid.Row="1"
+			Wrap="Wrap"
+			JustifyContent="SpaceEvenly"
+			BindableLayout.ItemsSource="{Binding Letters}">
+			<BindableLayout.ItemTemplate>
+				<DataTemplate>
+					<Button
+						WidthRequest="50" HeightRequest="50"
+						Text="{Binding .}"
+						Clicked="OnLetterButtonClicked" />
+				</DataTemplate>
+			</BindableLayout.ItemTemplate>
+		</FlexLayout>
+	</Grid>
+
+</ContentPage>
