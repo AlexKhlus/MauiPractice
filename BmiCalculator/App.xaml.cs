@@ -1,0 +1,13 @@
+﻿using BmiCalculator.Views;
+
+
+namespace BmiCalculator;
+public partial class App : Application
+{
+	public App()
+	{
+		InitializeComponent();
+
+		MainPage = new BodyMassIndexView();
+	}
+}
