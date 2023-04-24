@@ -2,7 +2,7 @@
 using CommunityToolkit.Maui.Core;
 
 
-namespace ColorMaker;
+namespace ColorMaker.Views;
 public partial class MainPage : ContentPage
 {
 	private bool _isRandom;

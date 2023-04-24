@@ -1,4 +1,7 @@
-﻿namespace ColorMaker;
+﻿using ColorMaker.Views;
+
+
+namespace ColorMaker;
 public partial class App : Application
 {
 	public App()
