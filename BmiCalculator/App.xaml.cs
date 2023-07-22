@@ -1,4 +1,5 @@
 ﻿using BmiCalculator.Views;
+using Microsoft.Maui.Controls;
 
 
 namespace BmiCalculator;
