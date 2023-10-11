@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 
 namespace Weather;
@@ -11,11 +12,14 @@ public static class MauiProgram
 		builder
 			.UseMauiApp<App>()
 			.UseMauiCommunityToolkit()
+			.UseSkiaSharp()
 			.ConfigureFonts(
 				fonts =>
 				{
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 					fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+					fonts.AddFont("Rubik-Light.ttf", "RubikLight");
+					fonts.AddFont("Rubik-Regular.ttf", "RubikRegular");
 				});
 
 		#if DEBUG
