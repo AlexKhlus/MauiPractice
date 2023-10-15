@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:view="clr-namespace:ProsperDaily.Views"
+			 x:Class="ProsperDaily.Views.AppContainer"
+			 Title="Tabs">
+	<NavigationPage Title="Dashboard">
+		<x:Arguments>
+			<view:DashboardView />
+		</x:Arguments>
+	</NavigationPage>
+	<view:StatisticView Title="Statistics" />
+</TabbedPage>

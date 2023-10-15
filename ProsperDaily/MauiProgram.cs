@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using ProsperDaily.Extensions;
+using Syncfusion.Maui.Core.Hosting;
 
 
 namespace ProsperDaily;
@@ -9,6 +11,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.ConfigureSyncfusionCore()
 			.ConfigureFonts(
 				fonts =>
 				{
@@ -17,6 +20,8 @@ public static class MauiProgram
 					fonts.AddFont("Roboto-Black.ttf", "RobotoBlack");
 					fonts.AddFont("LibreFranklin-Regular.ttf", "LibreFranklinRegular");
 				});
+
+		builder.Services.AddRepositories();
 
 		#if DEBUG
 		builder.Logging.AddDebug();
