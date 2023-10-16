@@ -1,0 +1,15 @@
+using DevsPark.ViewModels;
+
+
+namespace DevsPark.Views.DesertMirage.OasisFun;
+
+public partial class OasisPools : ContentPage
+{
+	public OasisPools(PlacesViewModel viewModel)
+	{
+		InitializeComponent();
+
+        viewModel.SetCurrentPlace(this.GetName());
+        BindingContext = viewModel;
+    }
+}
