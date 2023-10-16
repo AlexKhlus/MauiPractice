@@ -56,7 +56,6 @@
 
     <ItemGroup>
       <Folder Include="Utils\Converters\" />
-      <Folder Include="Utils\Extensions\" />
       <Folder Include="Utils\Search\" />
     </ItemGroup>
 

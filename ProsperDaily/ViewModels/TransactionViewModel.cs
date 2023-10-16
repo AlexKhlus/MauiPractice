@@ -1,6 +1,7 @@
 ﻿using System.Windows.Input;
 using PropertyChanged;
 using ProsperDaily.Models;
+using ProsperDaily.ViewModels.Base;
 
 
 namespace ProsperDaily.ViewModels;

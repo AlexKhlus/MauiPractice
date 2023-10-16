@@ -3,6 +3,7 @@ using PropertyChanged;
 using ProsperDaily.Extensions;
 using ProsperDaily.Models;
 using ProsperDaily.Repositories.Base;
+using ProsperDaily.ViewModels.Base;
 
 
 namespace ProsperDaily.ViewModels;

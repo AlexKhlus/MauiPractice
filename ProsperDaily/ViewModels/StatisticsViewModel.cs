@@ -2,6 +2,7 @@
 using PropertyChanged;
 using ProsperDaily.Extensions;
 using ProsperDaily.Models;
+using ProsperDaily.ViewModels.Base;
 
 
 namespace ProsperDaily.ViewModels;
